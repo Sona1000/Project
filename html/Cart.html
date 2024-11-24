@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物車系統</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/Cart.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="menu">
+              <a href="#" class="logo">
+                  <img src="../img/logotext.png" alt="Logo">
+              </a>
+              <div class="menu-container">
+                  <ul class="icon-links">
+                      <li><a href="Login.html"><i class="fas fa-user"></i> 會員名稱</a></li>
+                      <li><a href="Checkout.html"><i class="fas fa-shopping-cart"></i> 購物車</a></li>
+                      <li><a href="Login.html"><i class="fas fa-sign-out-alt"></i> 登入</a></li>
+                  </ul>
+                  <ul class="nav-links">
+                      <li><a href="../Index.html">首頁</a></li>
+                      <li><a href="Adopt.html">領養</a></li>
+                      <li><a href="Cart.html">食品</a></li>
+                      <li><a href="#">關於</a></li>
+                      <li><a href="#">聯絡</a></li>
+                  </ul>
+              </div>
+            </nav>
+        </header>
+        <!-- 側邊欄 -->
+        <div class="sidebar">
+            <h2>商品類型</h2>
+            <ul>
+                <li>類型A</li>
+                <li>類型B</li>
+                <li>類型C</li>
+                <li>類型D</li>
+            </ul>
+        </div>
+
+        <!-- 商品區域 -->
+        <div class="products-section">
+            <!-- 搜尋功能 -->
+            <div class="search-container">
+                <input type="text" class="search-bar" placeholder="輸入關鍵字搜尋...">
+                <button class="search-button">搜尋</button>
+            </div>
+
+            <!-- 分類篩選 -->
+            <div class="filters">
+                <select>
+                    <option value="" disabled selected>依姓名分類</option>
+                    <option value="name1">姓名1</option>
+                    <option value="name2">姓名2</option>
+                    <option value="name3">姓名3</option>
+                </select>
+                <select>
+                    <option value="" disabled selected>依品種分類</option>
+                    <option value="type1">品種1</option>
+                    <option value="type2">品種2</option>
+                    <option value="type3">品種3</option>
+                </select>
+                <select>
+                    <option value="" disabled selected>依年齡分類</option>
+                    <option value="age1">1歲以下</option>
+                    <option value="age2">1-3歲</option>
+                    <option value="age3">3歲以上</option>
+                </select>
+            </div>
+
+            <!-- 商品清單 -->
+            <div class="products">
+                <!-- 15 個商品 -->
+                <div class="product" data-name="產品A1" data-price="100">
+                    <img src="../img/food/tool01.jpg" alt="Product A1">
+                    <p>產品A1</p>
+                    <p>價格: $100</p>
+                    <button class="add-to-cart">加入購物車</button>
+                </div>
+                <div class="product" data-name="產品A2" data-price="200">
+                    <img src="../img/food/tool01.jpg" alt="Product A2">
+                    <p>產品A2</p>
+                    <p>價格: $200</p>
+                    <button class="add-to-cart">加入購物車</button>
+                </div>
+                <div class="product" data-name="產品A3" data-price="300">
+                    <img src="../img/food/tool01.jpg" alt="Product A3">
+                    <p>產品A3</p>
+                    <p>價格: $300</p>
+                    <button class="add-to-cart">加入購物車</button>
+                </div>
+                <div class="product" data-name="產品A4" data-price="400">
+                    <img src="../img/food/tool01.jpg" alt="Product A4">
+                    <p>產品A4</p>
+                    <p>價格: $400</p>
+                    <button class="add-to-cart">加入購物車</button>
+                </div>
+                <div class="product" data-name="產品B1" data-price="150">
+                    <img src="../img/food/tool01.jpg" alt="Product B1">
+                    <p>產品B1</p>
+                    <p>價格: $150</p>
+                    <button class="add-to-cart">加入購物車</button>
+                </div>
+                <div class="product" data-name="產品B2" data-price="250">
+                    <img src="../img/food/tool01.jpg" alt="Product B2">
+                    <p>產品B2</p>
+                    <p>價格: $250</p>
+                    <button class="add-to-cart">加入購物車</button>
+                </div>
+                <div class="product" data-name="產品B3" data-price="350">
+                    <img src="../img/food/tool01.jpg" alt="Product B3">
+                    <p>產品B3</p>
+                    <p>價格: $350</p>
+                    <button class="add-to-cart">加入購物車</button>
+                </div>
+                <div class="product" data-name="產品B4" data-price="450">
+                    <img src="../img/food/tool01.jpg" alt="Product B4">
+                    <p>產品B4</p>
+                    <p>價格: $450</p>
+                    <button class="add-to-cart">加入購物車</button>
+                </div>
+                <div class="product" data-name="產品C1" data-price="180">
+                    <img src="../img/food/tool01.jpg" alt="Product C1">
+                    <p>產品C1</p>
+                    <p>價格: $180</p>
+                    <button class="add-to-cart">加入購物車</button>
+                </div>
+                <div class="product" data-name="產品C2" data-price="280">
+                    <img src="../img/food/tool01.jpg" alt="Product C2">
+                    <p>產品C2</p>
+                    <p>價格: $280</p>
+                    <button class="add-to-cart">加入購物車</button>
+                </div>
+                <div class="product" data-name="產品C3" data-price="380">
+                    <img src="../img/food/tool01.jpg" alt="Product C3">
+                    <p>產品C3</p>
+                    <p>價格: $380</p>
+                    <button class="add-to-cart">加入購物車</button>
+                </div>
+                <div class="product" data-name="產品C4" data-price="480">
+                    <img src="../img/food/tool01.jpg" alt="Product C4">
+                    <p>產品C4</p>
+                    <p>價格: $480</p>
+                    <button class="add-to-cart">加入購物車</button>
+                </div>
+                <div class="product" data-name="產品D1" data-price="120">
+                    <img src="../img/food/tool01.jpg" alt="Product D1">
+                    <p>產品D1</p>
+                    <p>價格: $120</p>
+                    <button class="add-to-cart">加入購物車</button>
+                </div>
+                <div class="product" data-name="產品D2" data-price="220">
+                    <img src="../img/food/tool01.jpg" alt="Product D2">
+                    <p>產品D2</p>
+                    <p>價格: $220</p>
+                    <button class="add-to-cart">加入購物車</button>
+                </div>
+                <div class="product" data-name="產品D3" data-price="320">
+                    <img src="../img/food/tool01.jpg" alt="Product D3">
+                    <p>產品D3</p>
+                    <p>價格: $320</p>
+                    <button class="add-to-cart">加入購物車</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入/註冊頁面</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/Login.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+    <div class="container">
+
+        <!-- 社交登入 -->
+        <div class="social-login">
+            <button class="social-button google-button">
+                <i class="fab fa-google"></i> Google 登入
+            </button>
+            <button class="social-button fb-button">
+                <i class="fab fa-facebook-f"></i> Facebook 登入
+            </button>
+        </div>
+
+        <!-- 主內容區域 -->
+        <div class="form-container">
+            <!-- 登入與註冊切換 -->
+            <div class="toggle-buttons">
+                <button id="login-tab" class="tab active">登入</button>
+                <button id="register-tab" class="tab">註冊</button>
+            </div>
+
+            <!-- 登入表單 -->
+            <form id="login-form" class="form active">
+                <h2>請輸入您的登錄資訊</h2>
+                <div class="form-group">
+                    <label for="login-email">電子郵件或手機號碼</label>
+                    <input type="text" id="login-email" placeholder="請輸入電子郵件或手機號碼">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">密碼</label>
+                    <input type="password" id="login-password" placeholder="請輸入密碼">
+                </div>
+                <button type="submit" class="submit-button">登入</button>
+            </form>
+
+            <!-- 註冊表單 -->
+            <form id="register-form" class="form">
+                <h2>請輸入您的註冊資訊</h2>
+                <div class="form-group">
+                    <label for="register-name">姓名</label>
+                    <input type="text" id="register-name" placeholder="請輸入姓名">
+                </div>
+                <div class="form-group">
+                    <label for="register-phone">手機號碼</label>
+                    <input type="text" id="register-phone" placeholder="請輸入手機號碼">
+                </div>
+                <div class="form-group">
+                    <label for="register-birthday">生日</label>
+                    <input type="date" id="register-birthday">
+                </div>
+                <div class="form-group">
+                    <label for="register-email">電子郵件</label>
+                    <input type="email" id="register-email" placeholder="請輸入電子郵件">
+                </div>
+                <div class="form-group">
+                    <label for="register-password">密碼</label>
+                    <input type="password" id="register-password" placeholder="請輸入密碼">
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm-password">確認密碼</label>
+                    <input type="password" id="register-confirm-password" placeholder="請再次輸入密碼">
+                </div>
+                <button type="submit" class="submit-button">註冊</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // 切換登入與註冊表單
+        document.getElementById('login-tab').addEventListener('click', function () {
+            document.getElementById('login-tab').classList.add('active');
+            document.getElementById('register-tab').classList.remove('active');
+            document.getElementById('login-form').classList.add('active');
+            document.getElementById('register-form').classList.remove('active');
+        });
+
+        document.getElementById('register-tab').addEventListener('click', function () {
+            document.getElementById('register-tab').classList.add('active');
+            document.getElementById('login-tab').classList.remove('active');
+            document.getElementById('register-form').classList.add('active');
+            document.getElementById('login-form').classList.remove('active');
+        });
+    </script>
+</body>
+</html>

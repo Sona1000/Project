@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>領養貓頁面</title>
+    <!-- Font Awesome for search icon -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/Adopt.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+    <div class="container">
+        		<!-- 頁首 -->
+		<header>
+            <nav class="menu">
+              <a href="#" class="logo">
+                  <img src="../img/logotext.png" alt="Logo">
+              </a>
+              <div class="menu-container">
+                  <ul class="icon-links">
+                      <li><a href="Login.html"><i class="fas fa-user"></i> 會員名稱</a></li>
+                      <li><a href="Checkout.html"><i class="fas fa-shopping-cart"></i> 購物車</a></li>
+                      <li><a href="Login.html"><i class="fas fa-sign-out-alt"></i> 登入</a></li>
+                  </ul>
+                  <ul class="nav-links">
+                      <li><a href="../Index.html">首頁</a></li>
+                      <li><a href="Adopt.html">領養</a></li>
+                      <li><a href="Cart.html">食品</a></li>
+                      <li><a href="#">關於</a></li>
+                      <li><a href="#">聯絡</a></li>
+                  </ul>
+              </div>
+            </nav>
+        </header>
+
+        <main>
+
+            <!-- 路徑導航 -->
+            <div class="breadcrumb">
+                <a href="#">首頁</a> / <a href="#">領養頁面</a>
+            </div>
+
+            <!-- 搜尋功能 -->
+            <div class="search-bar">
+                <input type="text" placeholder="請輸入編號" class="search-input">
+                <button class="search-button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+            </div>
+
+            <!-- 篩選功能 -->
+            <div class="filters">
+                <select name="gender" class="filter-select">
+                    <option value="">性別</option>
+                    <option value="male">男</option>
+                    <option value="female">女</option>
+                </select>
+                <select name="age" class="filter-select">
+                    <option value="">年紀</option>
+                    <option value="kitten">幼貓</option>
+                    <option value="adult">成貓</option>
+                </select>
+                <select name="breed" class="filter-select">
+                    <option value="">品種</option>
+                    <option value="mixed">混種</option>
+                    <option value="purebred">純種</option>
+                </select>
+            </div>
+
+            <!-- 貓咪信息卡片 -->
+            <div class="cat-list">
+                <!-- 第1個卡片 -->
+                <div class="cat-card">
+                    <img src="../img/cat/catAdopt01.png" alt="Cat 1" class="cat-image">
+                    <div class="cat-info">
+                        <p><strong>送養案件編號：</strong>A173034592109</p>
+                        <p><strong>建立日期：</strong>2024-10-31</p>
+                        <p><strong>開放領養中</strong></p>
+                        <p>[嘉義縣梅山鄉] 叫聲響亮到被阿公丟石頭的豆豆，不想再餓肚子了</p>
+                        <p><strong>動物類別：</strong> 貓</p>
+                        <p><strong>動物名稱：</strong> 豆豆</p>
+                        <p><strong>動物性別：</strong> 女</p>
+                        <p><strong>結紮狀態：</strong> 否</p>
+                        <p><strong>可送養縣市範圍：</strong> 台中市 雲林縣 嘉義市 嘉義縣</p>
+                    </div>
+                </div>
+
+                <!-- 第2個卡片 -->
+                <div class="cat-card">
+                    <img src="../img/cat/catAdopt02.png" alt="Cat 2" class="cat-image">
+                    <div class="cat-info">
+                        <p><strong>送養案件編號：</strong>A173034592209</p>
+                        <p><strong>建立日期：</strong>2024-11-01</p>
+                        <p><strong>開放領養中</strong></p>
+                        <p>[台中市大里區] 曾經無家可歸的咪咪，希望找到新家</p>
+                        <p><strong>動物類別：</strong> 貓</p>
+                        <p><strong>動物名稱：</strong> 咪咪</p>
+                        <p><strong>動物性別：</strong> 女</p>
+                        <p><strong>結紮狀態：</strong> 是</p>
+                        <p><strong>可送養縣市範圍：</strong> 台中市 彰化縣</p>
+                    </div>
+                </div>
+
+                <!-- 第3個卡片 -->
+                <div class="cat-card">
+                    <img src="../img/cat/catAdopt03.png" alt="Cat 3" class="cat-image">
+                    <div class="cat-info">
+                        <p><strong>送養案件編號：</strong>A173034592309</p>
+                        <p><strong>建立日期：</strong>2024-11-02</p>
+                        <p><strong>開放領養中</strong></p>
+                        <p>[雲林縣斗六市] 溫柔乖巧的小黑，期待遇見好主人</p>
+                        <p><strong>動物類別：</strong> 貓</p>
+                        <p><strong>動物名稱：</strong> 小黑</p>
+                        <p><strong>動物性別：</strong> 男</p>
+                        <p><strong>結紮狀態：</strong> 是</p>
+                        <p><strong>可送養縣市範圍：</strong> 雲林縣 嘉義縣 台南市</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 分頁導航 -->
+            <div class="pagination">
+                <a href="#" class="page-link">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <a href="#" class="page-link">下一頁</a>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>

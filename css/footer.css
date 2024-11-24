@@ -1,0 +1,79 @@
+footer {
+    background-color: #f8f9fa; /* 背景顏色 */
+    width: 1200px; /* 寬度 */
+    height: 300px; /* 高度 */
+    margin: 0 auto; /* 置中 */
+    padding: 20px 0; /* 內邊距 */
+    border-top: 1px solid #ddd; /* 頂部分隔線 */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* 水平分布 */
+    align-items: flex-start; /* 項目頂對齊 */
+    height: 100%; /* 滿高 */
+    padding: 0 50px; /* 左右內邊距 */
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1; /* 每個區域占用等寬 */
+    max-width: 400px; /* 限制最大寬度 */
+}
+
+.footer-left h3,
+.footer-center h3,
+.footer-right h3 {
+    font-size: 24px; /* 標題字體大小 */
+    margin-bottom: 20px; /* 與內容的間距 */
+    color: #333; /* 標題顏色 */
+}
+
+.footer-left ul {
+    list-style: none; /* 移除列表符號 */
+    padding: 0;
+    margin: 0;
+}
+
+.footer-left ul li {
+    margin-bottom: 15px; /* 項目之間的距離 */
+}
+
+.footer-left ul li a,
+.footer-center a,
+.footer-right a {
+    text-decoration: none; /* 移除超連結下劃線 */
+    color: #007bff; /* 連結顏色 */
+    font-size: 18px; /* 文字大小 */
+}
+
+.footer-left ul li a:hover,
+.footer-center a:hover,
+.footer-right a:hover {
+    text-decoration: underline; /* 滑鼠懸停顯示下劃線 */
+    color: #0056b3; /* 滑鼠懸停顏色 */
+}
+
+.footer-center p {
+    margin-bottom: 15px; /* 段落間距 */
+    font-size: 18px; /* 文字大小 */
+    color: #333; /* 文字顏色 */
+}
+
+/* 新增右側按鈕樣式 */
+.add-friend-btn {
+    display: inline-block; /* 讓按鈕顯示為區塊 */
+    padding: 10px 20px; /* 按鈕內邊距 */
+    background-color: #28a745; /* 按鈕背景色 */
+    color: white; /* 按鈕文字顏色 */
+    border-radius: 5px; /* 圓角 */
+    font-size: 18px; /* 字體大小 */
+    text-align: center; /* 文字置中 */
+    text-decoration: none; /* 去除下劃線 */
+    margin-top: 20px; /* 與標題的間距 */
+}
+
+.add-friend-btn:hover {
+    background-color: #218838; /* 滑鼠懸停顏色 */
+}

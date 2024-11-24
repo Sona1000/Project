@@ -1,0 +1,187 @@
+@import url("reset.css");
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* 將內容居中對齊 */
+    align-items: center;
+    min-height: 100vh;
+}
+
+.product-detail-container {
+    background-color: #FCF8EC;
+    margin-top: 40px; /* 与 header 的高度一致 */
+}
+
+.product-detail-container {
+    display: flex;
+    width: 1200px; /* 設置寬度為 1200px */
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    gap: 40px; /* 左右區域間距增加 */
+}
+
+.product-images {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-image {
+    width: 100%;
+    height: 500px; /* 主圖片區域高度加大 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+}
+
+.main-image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.thumbnail-images {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* 小圖間距 */
+}
+
+.thumbnail-images img {
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.thumbnail-images img:hover {
+    transform: scale(1.1);
+    border-color: #3498db;
+}
+
+.product-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-info h1 {
+    margin: 0;
+    font-size: 28px; /* 商品名稱加大 */
+    color: #333;
+}
+
+.product-description {
+    margin: 20px 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.product-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin: 10px 0;
+}
+
+.size-selector {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.size-selector label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.size-button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.size-button:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.quantity-selector button {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.quantity-selector button:hover {
+    background-color: #2980b9;
+}
+
+.quantity-selector input {
+    width: 60px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.buy-button,
+.cart-button {
+    flex: 1;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.buy-button:hover {
+    background-color: #c0392b;
+}
+
+.cart-button {
+    background-color: #3498db;
+    color: white;
+}
+
+.cart-button:hover {
+    background-color: #2980b9;
+}

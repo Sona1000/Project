@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品詳細內容</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/AdoptInfo.css">
+    <link rel="stylesheet" href="../css/Header.css"> <!-- 確保載入 Header 的樣式 -->
+</head>
+<body>
+
+    <!-- Header 區域 -->
+    <header>
+        <nav class="menu">
+            <a href="#" class="logo">
+                <img src="../img/logotext.png" alt="Logo">
+            </a>
+            <div class="menu-container">
+                <ul class="icon-links">
+                    <li><a href="Login.html"><i class="fas fa-user"></i> 會員名稱</a></li>
+                    <li><a href="Checkout.html"><i class="fas fa-shopping-cart"></i> 購物車</a></li>
+                    <li><a href="Login.html"><i class="fas fa-sign-out-alt"></i> 登入</a></li>
+                </ul>
+                <ul class="nav-links">
+                    <li><a href="../Index.html">首頁</a></li>
+                    <li><a href="Adopt.html">領養</a></li>
+                    <li><a href="Cart.html">食品</a></li>
+                    <li><a href="#">關於</a></li>
+                    <li><a href="#">聯絡</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主內容 -->
+    <div class="product-detail-container">
+        <!-- 左側圖片區 -->
+        <div class="product-images">
+            <div class="main-image">
+                <img src="https://via.placeholder.com/600" alt="大圖" id="mainImage">
+            </div>
+            <div class="thumbnail-images">
+                <img src="https://via.placeholder.com/120" alt="小圖1" class="thumbnail" onclick="changeImage(this)">
+                <img src="https://via.placeholder.com/120/ff0000" alt="小圖2" class="thumbnail" onclick="changeImage(this)">
+                <img src="https://via.placeholder.com/120/00ff00" alt="小圖3" class="thumbnail" onclick="changeImage(this)">
+                <img src="https://via.placeholder.com/120/0000ff" alt="小圖4" class="thumbnail" onclick="changeImage(this)">
+            </div>
+        </div>
+
+        <!-- 右側商品資訊 -->
+        <div class="product-info">
+            <h1>商品名稱</h1>
+            <p class="product-description">
+                這是一段商品描述內容，介紹商品的功能、特色和優勢。您可以根據實際商品內容進行修改和完善。
+            </p>
+            <p class="product-price">價格：<span id="price">1,000</span> 元</p>
+            
+            <!-- 尺寸選擇 -->
+            <div class="size-selector">
+                <label>尺寸：</label>
+                <button class="size-button" onclick="selectSize('XL')">XL</button>
+                <button class="size-button" onclick="selectSize('L')">L</button>
+                <button class="size-button" onclick="selectSize('M')">M</button>
+            </div>
+            
+            <!-- 數量選擇 -->
+            <div class="quantity-selector">
+                <button onclick="decreaseQuantity()">-</button>
+                <input type="number" id="quantity" value="1" min="1" readonly>
+                <button onclick="increaseQuantity()">+</button>
+            </div>
+            
+            <!-- 購買按鈕 -->
+            <div class="action-buttons">
+                <button class="buy-button">直接購買</button>
+                <button class="cart-button">加入購物車</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Google Map -->
+    <div class="map-container">
+        <h2>查看附近的領養中心</h2>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.5095982100796!2d120.99739131550865!3d24.794667884084776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346837999e8b68b5%3A0x63eaf18df4c9d567!2z6buO6auY5buj6aSQ5aCc5a-26KeA6YGT5biC!5e0!3m2!1szh-TW!2stw!4v1691078697202!5m2!1szh-TW!2stw"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+    <script src="../JS/ItemInfo.js"></script>
+</body>
+</html>

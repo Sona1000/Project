@@ -1,0 +1,525 @@
+@import url("reset.css");
+
+body{
+    width: 1200px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #333;
+    position: relative;
+    height: 100%;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.wrapper{
+    box-sizing: border-box;
+    background-color: #FCF8EC;
+}
+
+h2{
+    font-size: 36px;
+    text-align: center;
+    padding: 20px 0;
+    font-weight: bold;
+}
+/* *{ outline: 1px solid red} */
+
+/*====================== 上層選單 ======================*/
+
+.menu {
+    background-color: #f7f7f7;
+    width: 1200px;
+    height: 140px;
+    display: flex;
+    justify-content: space-between; /* LOGO 和右側導航均勻分布 */
+    align-items: flex-start; /* 內容從頂部對齊 */
+    margin: 0 auto;
+    font-size: 24px;
+    position: fixed; /* 固定在視口 */
+    top: 0; /* 固定在視口頂部 */
+    left: 50%; /* 確保居中 */
+    transform: translateX(-50%); /* 抵消 left: 50% 的偏移 */
+    z-index: 1000; /* 確保 header 在其他內容之上 */
+}
+
+
+/* LOGO 區域 */
+.logo img {
+    padding-left: 20px;
+    width: 160px; /* LOGO 的寬度 */
+    height: auto; /* 自動調整比例 */
+}
+
+/* 右側導航容器 */
+.menu-container {
+    display: flex;
+    flex-direction: column; /* 上下排列導航區域 */
+    justify-content: space-between; /* 上下分組均勻分布 */
+    align-items: flex-end; /* 將內容靠右對齊 */
+    gap: 20px; /* 上下區域間距 */
+    width: calc(100% - 180px); /* 避免 LOGO 壓縮右側內容 */
+}
+
+/* 上部分：圖標導航 */
+.icon-links {
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between; /* 水平均勻分布 */
+    list-style: none;
+    gap: 20px; /* 圖標項目之間的距離 */
+    margin-right: 16px;
+}
+
+.icon-links li {
+    text-align: center;
+}
+
+.icon-links a {
+    color: #333;
+    font-size: 20px; /* 字體大小 */
+    display: flex;
+    align-items: center; /* 圖標和文字垂直居中 */
+    gap: 8px; /* 圖標與文字間距 */
+    transition: color 0.3s ease;
+}
+
+.icon-links a:hover {
+    color: #007bff; /* 滑鼠懸停效果 */
+}
+
+/* 下部分：主導航 */
+.nav-links {
+    font-weight: bold;
+    display: flex;
+    list-style: none; /* 去掉默认列表样式 */
+    width: 60%; /* 导航占满容器 */
+}
+
+.nav-links li {
+    flex: 1; /* 每个子元素平分父容器宽度 */
+    text-align: center; /* 文字水平居中 */
+}
+
+.nav-links a {
+    display: block; /* 扩展超链接的点击范围 */
+    text-decoration: none; /* 去掉下划线 */
+    color: #333; /* 默认文字颜色 */
+    padding: 15px 0; /* 增加上下内边距以方便点击 */
+    transition: color 0.3s ease; /* 鼠标悬停时颜色平滑变化 */
+}
+
+.nav-links a:hover {
+    color: #007bff; /* 鼠标悬停时文字颜色变化 */
+}
+
+
+
+
+/*====================== 上層大圖 ======================*/
+
+main{
+    margin-top: 140px;
+}
+
+/* 背景容器样式 */
+.background-container {
+    border: 1px solid #d5d3d3;
+    max-width: 1200px;
+    height: 680px; /* 设为视口高度 */
+    margin: 0 auto;
+    background: linear-gradient(to bottom, #d78d8d 70%, #d5d3d3 30%); /* 背景渐变，上方红色，下方黑色 */
+    display: flex;
+    flex-direction: column; /* 垂直排列 */
+    justify-content: flex-start; /* 从顶部对齐内容 */
+    align-items: center; /* 水平居中对齐 */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* 标题样式 */
+.center-title {
+    font-size: 48px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px; /* 与滑块的间距 */
+    font-weight: bold;
+}
+
+/* Swiper 容器样式 */
+.swiper {
+    width: 80%; /* 宽度占比 */
+    max-width: 1200px;
+    height: 72%; /* 高度占比 */
+    background: white; /* 滑块背景颜色 */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #333;
+    height: 100%; /* 确保滑块高度自适应 */
+}
+
+/* 分页器样式 */
+.swiper-pagination {
+    margin-top: 10px;
+}
+
+
+/*====================== 中層領養圖 ======================*/
+
+
+.carousel-container {
+display: flex;
+align-items: center;
+gap: 10px;
+width: 100%;
+max-width: 1200px; /* 限制寬度 */
+margin: auto;
+overflow: hidden; /* 隱藏溢出的內容 */
+position: relative;
+box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+padding: 10px auto;
+}
+
+.carousel {
+display: flex;
+gap: 20px;
+padding-right: 20px;
+transition: transform 0.3s ease;
+overflow: hidden;
+}
+
+.item {
+box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;    
+flex: 0 0 300px; /* 固定寬度 */
+height: 400px;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+padding: 20px;
+background-color: #f9f9f9;
+border-radius: 8px;
+}
+
+.item img {
+width: 100%;
+height: 300px;
+object-fit: cover;
+border-radius: 8px;
+}
+
+.item p {
+margin-top: 10px;
+font-size: 16px;
+color: #333;
+}
+
+.prev-btn,
+.prev-btn {
+background-color: #007bff;
+color: white;
+border: none;
+padding: 10px 20px;
+font-size: 18px;
+cursor: pointer;
+border-radius: 4px;
+}
+
+.prev-btn,
+.prev-btn:disabled {
+background-color: #ccc;
+cursor: not-allowed;
+}
+
+.prev-btn,
+.prev-btn:hover:not(:disabled) {
+background-color: #0056b3;
+}
+  
+/*====================== gallery1 ======================*/
+.overlap-container {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    height: 200px;
+    box-sizing: border-box;
+}
+
+.overlap-container img.left-image {
+    outline: 1px solid black;
+    position: absolute;
+    left: 100px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 160px;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.overlap-container h2 {
+    position: absolute;
+    height: 80%;
+    top: 50%;
+    left: 180px;
+    transform: translateY(-50%);
+    width: 320px;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 1.5;
+    box-sizing: border-box;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.overlap-container img.right-image {
+    outline: 1px solid black;
+    position: absolute;
+    right: 132px;
+    top: 100%;
+    transform: translateY(-50%); /* 使圖片垂直居中 */
+    width: 30%; /* 根據需要調整大小 */
+    height: 80%;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.overlap-container img.arrow-right {
+
+    position: absolute;
+    right: 490px;
+    top: 100%;
+    transform: translateY(-50%); /* 使圖片垂直居中 */
+
+
+}
+
+
+
+
+/*====================== gallery2 ======================*/
+.overlap-container2 {
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    height: 200px;
+    box-sizing: border-box;
+}
+
+.overlap-container2 img.left-image2 {
+    outline: 1px solid black;
+    position: absolute;
+    right: 100px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 160px;
+    height: 80%;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.overlap-container2 h2 {
+    position: absolute;
+    height: 80%;
+    top: 50%;
+    right: 180px;
+    transform: translateY(-50%);
+    width: 320px;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 1.5;
+    box-sizing: border-box;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.overlap-container2 img.right-image2 {
+    outline: 1px solid black;
+    position: absolute;
+    left: 132px;
+    top: 100%;
+    transform: translateY(-50%); /* 使圖片垂直居中 */
+    width: 30%; /* 根據需要調整大小 */
+    height: 80%;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.overlap-container2 img.arrow-left {
+
+    position: absolute;
+    right: 500px;
+    top: 100%;
+    transform: translateY(-50%); /* 使圖片垂直居中 */
+
+
+}
+/*====================== 下層展示圖 ======================*/
+/* Gallery container */
+.adopt-cats-gallery {
+    width: 1200px;
+    margin: 0 auto;
+    background-color: #f7f7f7; /* 背景色 */
+    padding: 40px 0; /* 上下内边距 */
+    text-align: center; /* 文字居中 */
+}
+
+/* Title styles */
+.adopt-cats-gallery h1 {
+    font-size: 5em;
+    font-family: 'Squada One', cursive;
+    letter-spacing: 10px;
+    padding-bottom: 20px;
+    color: #333; /* 标题颜色 */
+}
+
+.adopt-cats-gallery h2 {
+    font-size: 1.5em;
+    font-family: 'Jaldi', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color: #999;
+    margin-bottom: 50px;
+}
+
+/* Image gallery styles */
+.adopt-cats-gallery ul {
+    width: 1200px;
+    height: 500px;
+    margin: 0 auto;
+    outline: 5px solid white;
+    display: flex; /* 使用 flex 布局 */
+    overflow: hidden; /* 隐藏溢出的内容 */
+    border-radius: 10px; /* 圆角效果 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+}
+
+.adopt-cats-gallery li {
+    background-size: cover;
+    background-position: center center;
+    transition: flex-grow 0.5s ease; /* 平滑过渡效果 */
+    cursor: pointer; /* 鼠标指针样式 */
+}
+
+.adopt-cats-gallery .item1 {
+    background-image: url('../img/bg/item4_bg.jpg');
+    flex-grow: 3;
+}
+
+.adopt-cats-gallery .item2 {
+    background-image: url('../img/bg/item5_bg.jpg');
+    flex-grow: 1;
+}
+
+.adopt-cats-gallery .item3 {
+    background-image: url('../img/bg/item6_bg.jpg');
+    flex-grow: 2;
+}
+
+.adopt-cats-gallery li:hover {
+    flex-grow: 5; /* 鼠标悬停时放大当前图片 */
+    filter: brightness(1.1); /* 增强亮度 */
+}
+
+
+/*====================== 頁尾 ======================*/
+footer {
+    background-color: #f8f9fa; /* 背景顏色 */
+    width: 1200px; /* 寬度 */
+    height: 300px; /* 高度 */
+    margin: 0 auto; /* 置中 */
+    padding: 20px 0; /* 內邊距 */
+    border-top: 1px solid #ddd; /* 頂部分隔線 */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* 水平分布 */
+    align-items: flex-start; /* 項目頂對齊 */
+    height: 100%; /* 滿高 */
+    padding: 0 50px; /* 左右內邊距 */
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+    flex: 1; /* 每個區域占用等寬 */
+    max-width: 400px; /* 限制最大寬度 */
+}
+
+.footer-left h3,
+.footer-center h3,
+.footer-right h3 {
+    font-size: 24px; /* 標題字體大小 */
+    margin-bottom: 20px; /* 與內容的間距 */
+    color: #333; /* 標題顏色 */
+}
+
+.footer-left ul {
+    list-style: none; /* 移除列表符號 */
+    padding: 0;
+    margin: 0;
+}
+
+.footer-left ul li {
+    margin-bottom: 15px; /* 項目之間的距離 */
+}
+
+.footer-left ul li a,
+.footer-center a,
+.footer-right a {
+    text-decoration: none; /* 移除超連結下劃線 */
+    color: #007bff; /* 連結顏色 */
+    font-size: 18px; /* 文字大小 */
+}
+
+.footer-left ul li a:hover,
+.footer-center a:hover,
+.footer-right a:hover {
+    text-decoration: underline; /* 滑鼠懸停顯示下劃線 */
+    color: #0056b3; /* 滑鼠懸停顏色 */
+}
+
+.footer-center p {
+    margin-bottom: 15px; /* 段落間距 */
+    font-size: 18px; /* 文字大小 */
+    color: #333; /* 文字顏色 */
+}
+
+/* 新增右側按鈕樣式 */
+.add-friend-btn {
+    display: inline-block; /* 讓按鈕顯示為區塊 */
+    padding: 10px 20px; /* 按鈕內邊距 */
+    background-color: #28a745; /* 按鈕背景色 */
+    color: white; /* 按鈕文字顏色 */
+    border-radius: 5px; /* 圓角 */
+    font-size: 18px; /* 字體大小 */
+    text-align: center; /* 文字置中 */
+    text-decoration: none; /* 去除下劃線 */
+    margin-top: 20px; /* 與標題的間距 */
+}
+
+.add-friend-btn:hover {
+    background-color: #218838; /* 滑鼠懸停顏色 */
+}
+
+
+
+
+
+

@@ -1,0 +1,126 @@
+@import url("reset.css");
+
+/* 全局樣式 */
+body {
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+.container {
+    margin-top: 140px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* 社交登入 */
+.social-login {
+    display: flex;
+    justify-content:space-around;
+    margin-bottom: 24px;
+}
+
+.social-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.google-button {
+    background-color: #db4437;
+}
+
+.fb-button {
+    background-color: #4267B2;
+}
+
+/* 主內容 */
+.form-container {
+    background-color: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 切換按鈕 */
+.toggle-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+
+.tab {
+    flex: 1;
+    padding: 12px 0;
+    font-size: 18px;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.tab.active {
+    background-color: #007bff;
+    color: white;
+}
+
+/* 表單 */
+.form {
+    display: none;
+}
+
+.form.active {
+    display: block;
+}
+
+h2 {
+    margin-bottom: 24px;
+    font-size: 24px;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}

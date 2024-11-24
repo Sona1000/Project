@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物車結算</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/Checkout.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+    <div class="checkout-container">
+
+
+        <!-- 商品資料區 -->
+        <div class="cart-container">
+            <!-- 標題 -->
+            <div class="cart-header">
+                <span class="header-item">商品資料</span>
+                <span class="header-item">單價</span>
+                <span class="header-item">數量</span>
+                <span class="header-item">小計</span>
+            </div>
+
+            <!-- 購物車項目 -->
+            <div class="cart-item">
+                <div class="item-info">
+                    <img src="https://via.placeholder.com/60x80" alt="商品圖片" class="item-image">
+                    <span class="item-name">商品名稱 1</span>
+                </div>
+                <span class="item-price">$1,200</span>
+                <div class="item-quantity">
+                    <input type="number" value="1" min="1" class="quantity-input">
+                </div>
+                <span class="item-subtotal">$1,200</span>
+                <button class="remove-button" onclick="removeItem(this)">×</button>
+            </div>
+
+            <div class="cart-item">
+                <div class="item-info">
+                    <img src="https://via.placeholder.com/60x80/ff0000" alt="商品圖片" class="item-image">
+                    <span class="item-name">商品名稱 2</span>
+                </div>
+                <span class="item-price">$2,500</span>
+                <div class="item-quantity">
+                    <input type="number" value="2" min="1" class="quantity-input">
+                </div>
+                <span class="item-subtotal">$5,000</span>
+                <button class="remove-button" onclick="removeItem(this)">×</button>
+            </div>
+        </div>
+
+        <!-- 下方區域 -->
+        <div class="checkout-bottom">
+            <!-- 左側送貨與付款 -->
+            <div class="options-container">
+                <h2>運送與付款方式</h2>
+                <label for="shipping-method">送貨方式：</label>
+                <select id="shipping-method" onchange="updateTotal()">
+                    <option value="120">宅配 (+$120)</option>
+                    <option value="0">店家取貨 (免費)</option>
+                </select>
+
+                <label for="payment-method">付款方式：</label>
+                <select id="payment-method" onchange="toggleCreditCardInfo()">
+                    <option value="none" selected>請選擇付款方式</option>
+                    <option value="online">線上付款</option>
+                    <option value="cod">貨到付款</option>
+                </select>
+
+                <div id="credit-card-info" class="hidden">
+                    <label for="card-number">信用卡卡號：</label>
+                    <input type="text" id="card-number" placeholder="請輸入信用卡卡號">
+                    <label for="card-expiry">有效日期：</label>
+                    <input type="text" id="card-expiry" placeholder="MM/YY">
+                    <label for="card-cvc">安全碼：</label>
+                    <input type="text" id="card-cvc" placeholder="CVC">
+                </div>
+            </div>
+
+            <!-- 右側訂單資訊 -->
+            <div class="checkout-right">
+                <h2>訂單資訊</h2>
+                <div class="order-summary">
+                    <p>小計：<span id="subtotal-price">$6,200</span></p>
+                    <p>運費：<span id="shipping-fee">$120</span></p>
+                    <p>合計：<span id="total-price">$6,320</span></p>
+                </div>
+                <button class="checkout-button">結帳</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../JS/Checkout.js"></script>
+</body>
+</html>
