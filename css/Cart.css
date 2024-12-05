@@ -3,17 +3,19 @@
 /* 整體樣式 */
 body {
     font-family: 'Noto Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
+    line-height: 1.6;
+    margin: 0 auto;
+    width: 1200px;
     justify-content: center; /* 水平置中 */
+}
+
+.main{
+    display: flex;
 }
 
 .container {
     background-color: #FCF8EC;
     width: 1200px; /* 固定寬度 */
-    display: flex;
-    margin-top: 140px; /* 确保内容从 header 下面开始 */
 }
 
 /* 側邊欄樣式 */
@@ -102,9 +104,11 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 每行4個商品 */
     /* gap: 10px; */
+    margin-bottom: 20px;
 }
 
 .product {
+    padding-bottom: 20px;
     border: 1px solid #ddd;
     text-align: center;
     position: relative;
@@ -117,6 +121,7 @@ body {
     display: block;
     margin: 0 auto;
     transition: transform 0.3s ease;
+    margin-bottom: 10px;
 }
 
 .product:hover img {
@@ -145,4 +150,27 @@ body {
 
 .product button:hover {
     background-color: #2980b9;
+}
+
+/* 分頁導航 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 36px;
+}
+
+.page-link {
+    padding: 12px 24px;
+    border: 1px solid #000000;
+    color: #000000;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.page-link:hover {
+    background-color: #007bff;
+    color: white;
 }

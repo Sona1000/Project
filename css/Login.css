@@ -5,17 +5,16 @@ body {
     font-family: 'Noto Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7;
+    background-color: #FCF8EC;
 }
 
-.container {
-    margin-top: 140px;
-}
 
-.container {
-    max-width: 1200px;
+
+
+.main{
+    padding-top: 60px;
+    max-width: 600px;
     margin: 0 auto;
-    padding: 24px;
 }
 
 /* 社交登入 */
@@ -72,7 +71,7 @@ body {
 }
 
 .tab.active {
-    background-color: #007bff;
+    background-color: #aec9e6;
     color: white;
 }
 
@@ -113,7 +112,7 @@ input {
     width: 100%;
     padding: 12px;
     font-size: 16px;
-    background-color: #007bff;
+    background-color: #aec9e6;
     color: white;
     border: none;
     border-radius: 4px;
@@ -122,5 +121,5 @@ input {
 }
 
 .submit-button:hover {
-    background-color: #0056b3;
+    background-color: #aec9e6;
 }

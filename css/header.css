@@ -1,46 +1,45 @@
-.menu {
+/* .menu {
     background-color: #f7f7f7;
     width: 1200px;
     height: 140px;
     display: flex;
-    justify-content: space-between; /* LOGO 和右側導航均勻分布 */
-    align-items: flex-start; /* 內容從頂部對齊 */
+    justify-content: space-between; 
+    align-items: flex-start; 
     margin: 0 auto;
     font-size: 24px;
-    position: fixed; /* 固定在視口 */
-    top: 0; /* 固定在視口頂部 */
-    left: 50%; /* 確保居中 */
-    transform: translateX(-50%); /* 抵消 left: 50% 的偏移 */
-    z-index: 1000; /* 確保 header 在其他內容之上 */
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 添加輕微陰影 */
+    position: fixed; 
+    top: 0; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 1000; 
 }
 
 
-/* LOGO 區域 */
+
 .logo img {
     padding-left: 20px;
-    width: 160px; /* LOGO 的寬度 */
-    height: auto; /* 自動調整比例 */
+    width: 160px; 
+    height: auto; 
 }
 
-/* 右側導航容器 */
+
 .menu-container {
     display: flex;
-    flex-direction: column; /* 上下排列導航區域 */
-    justify-content: space-between; /* 上下分組均勻分布 */
-    align-items: flex-end; /* 將內容靠右對齊 */
-    gap: 33px; /* 上下區域間距 */
-    width: calc(100% - 180px); /* 避免 LOGO 壓縮右側內容 */
+    flex-direction: column; 
+    justify-content: space-between; 
+    align-items: flex-end; 
+    gap: 33px; 
+    width: calc(100% - 180px); 
 }
 
-/* 上部分：圖標導航 */
+
 .icon-links {
     padding-top: 6px;
     padding-right: 20px;
     display: flex;
-    justify-content: space-between; /* 水平均勻分布 */
+    justify-content: space-between; 
     list-style: none;
-    gap: 20px; /* 圖標項目之間的距離 */
+    gap: 20px; 
     margin-right: 16px;
 }
 
@@ -50,38 +49,129 @@
 
 .icon-links a {
     color: #333;
-    font-size: 20px; /* 字體大小 */
+    font-size: 20px;
     display: flex;
-    align-items: center; /* 圖標和文字垂直居中 */
-    gap: 8px; /* 圖標與文字間距 */
+    align-items: center; 
+    gap: 8px; 
     transition: color 0.3s ease;
 }
 
 .icon-links a:hover {
-    color: #007bff; /* 滑鼠懸停效果 */
+    color: #007bff;
 }
 
-/* 下部分：主導航 */
+
 .nav-links {
     font-weight: bold;
     display: flex;
-    list-style: none; /* 去掉默认列表样式 */
-    width: 60%; /* 导航占满容器 */
+    list-style: none; 
+    width: 60%; 
 }
 
 .nav-links li {
-    flex: 1; /* 每个子元素平分父容器宽度 */
-    text-align: center; /* 文字水平居中 */
+    flex: 1; 
+    text-align: center; 
 }
 
 .nav-links a {
-    display: block; /* 扩展超链接的点击范围 */
-    text-decoration: none; /* 去掉下划线 */
-    color: #333; /* 默认文字颜色 */
-    padding: 15px 0; /* 增加上下内边距以方便点击 */
-    transition: color 0.3s ease; /* 鼠标悬停时颜色平滑变化 */
+    display: block; 
+    text-decoration: none;
+    color: #333; 
+    padding: 15px 0; 
+    transition: color 0.3s ease; 
 }
 
 .nav-links a:hover {
-    color: #007bff; /* 鼠标悬停时文字颜色变化 */
+    color: #007bff; 
+} */
+
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #c9ccce;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Icon Links - 最上方 */
+.icon-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 10px 40px;
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.icon-links li {
+    margin-left: 15px;
+}
+
+.icon-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.icon-links a i {
+    margin-right: 5px;
+}
+
+/* 第二層：Logo 和 Nav Links - 同層次 */
+.menu-container {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    width: 100%;
+    box-sizing: border-box;
+    height: 100px;
+    overflow: hidden;
+}
+
+.overlap-container{
+    font-size: 16px;
+}
+
+.logo {
+    flex-shrink: 0;
+    width: 160px;
+    height: auto;
+}
+
+.logo img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 36px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    font-weight: bold;
 }

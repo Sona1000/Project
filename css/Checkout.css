@@ -7,20 +7,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    padding: 20px;
+    background-color: #FCF8EC;
 }
 
-.checkout-container {
-    margin-top: 140px;
+.main{
+    padding-top: 40px;
+    background-color: #FCF8EC;
 }
 
 .checkout-container {
     background-color: #FCF8EC;
     width: 1200px; /* 固定總寬度 */
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    /* border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+
 }
 
 /* 商品資料區 */

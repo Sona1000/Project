@@ -3,19 +3,17 @@
 /* 全局樣式 */
 body {
     font-family: 'Noto Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f7f7f7;
+    background-color: #FCF8EC;
+    line-height: 1.6;
 }
 
 main{
-    margin-top: 140px;
+    margin-top: 20px;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 24px;
     box-sizing: border-box;
 }
 
@@ -130,8 +128,8 @@ main{
 
 .page-link {
     padding: 12px 24px;
-    border: 1px solid #007bff;
-    color: #007bff;
+    border: 1px solid #000000;
+    color: #000000;
     border-radius: 4px;
     text-decoration: none;
     font-size: 16px;
