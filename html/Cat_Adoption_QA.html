@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>貓咪領養 Q&A</title>
+    <link rel="stylesheet" href="../css/Cat_Adoption_QA.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 頁首 -->
+        <header>
+            <nav class="menu">
+                <div class="menu-logo">
+                    <ul class="icon-links">
+                        <li><a href="#" style="pointer-events: none;"><i class="fas fa-user"></i> 會員名稱</a></li>
+                        <li><a href="./Checkout.html"><i class="fas fa-shopping-cart"></i> 購物車</a></li>
+                        <li><a href="./Login.html"><i class="fas fa-sign-out-alt"></i> 登入</a></li>
+                    </ul>
+                </div>
+
+                <div class="menu-container">
+                    <a href="../index.html" class="logo">
+                        <img src="../img/logotext.png" alt="Logo">
+                    </a>
+                    <ul class="nav-links">
+                        <li><a href="../index.html">首頁</a></li>
+                        <li><a href="./Adopt.html">領養</a></li>
+                        <li><a href="./Cart.html">食品</a></li>
+                        <li><a href="./Cat_Adoption_QA.html">關於領養</a></li>
+                        <li><a href="./Contact.html">聯絡我們</a></li>
+                    </ul>
+                    <div class="hamburger-menu">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="main">
+            <div class="qa-section">
+                <h1>貓咪領養 Q&A</h1>
+                <div class="qa-item">
+                    <div class="question">Q1: 如何開始領養貓咪？</div>
+                    <div class="answer">A: 您可以前往我們的貓咪領養中心，或透過網站申請領養表單，並等待我們的專人聯繫。</div>
+                </div>
+                <div class="qa-item">
+                    <div class="question">Q2: 領養貓咪需要準備哪些物品？</div>
+                    <div class="answer">A: 貓砂盆、貓砂、食盆、水盆、貓糧以及一個舒適的貓咪窩。</div>
+                </div>
+                <div class="qa-item">
+                    <div class="question">Q3: 領養後可以退還貓咪嗎？</div>
+                    <div class="answer">A: 領養是一份責任，我們希望您能充分考慮並做好準備。如果特殊情況，請聯絡我們的客服。</div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const questions = document.querySelectorAll(".qa-item .question");
+
+            questions.forEach(question => {
+                question.addEventListener("click", () => {
+                    const answer = question.nextElementSibling;
+
+                    // 切換顯示/隱藏答案
+                    if (answer.style.display === "block") {
+                        answer.style.display = "none";
+                    } else {
+                        answer.style.display = "block";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
