@@ -10,6 +10,30 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
     <script src="../JS/side_menu.js"></script>
+    <style>
+        .error-message {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .form {
+            display: none;
+        }
+
+        .form.active {
+            display: block;
+        }
+
+        .tab {
+            cursor: pointer;
+        }
+
+        .tab.active {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -49,10 +73,7 @@
         <div class="overlay"></div>
 
         <main class="main">
-
-            <!-- 主內容區域 -->
             <div class="form-container">
-                <!-- 登入與註冊切換 -->
                 <div class="toggle-buttons">
                     <button id="login-tab" class="tab active">登入</button>
                     <button id="register-tab" class="tab">註冊</button>
@@ -63,11 +84,13 @@
                     <h2>請輸入您的登錄資訊</h2>
                     <div class="form-group">
                         <label for="login-email">電子郵件或手機號碼</label>
-                        <input type="text" id="login-email" placeholder="請輸入電子郵件或手機號碼">
+                        <input type="text" id="login-email" placeholder="請輸入電子郵件或手機號碼" required>
+                        <div id="login-email-error" class="error-message">請填寫電子郵件或手機號碼</div>
                     </div>
                     <div class="form-group">
                         <label for="login-password">密碼</label>
-                        <input type="password" id="login-password" placeholder="請輸入密碼">
+                        <input type="password" id="login-password" placeholder="請輸入密碼" required>
+                        <div id="login-password-error" class="error-message">請填寫密碼</div>
                     </div>
                     <button type="submit" class="submit-button">登入</button>
                 </form>
@@ -77,59 +100,151 @@
                     <h2>請輸入您的註冊資訊</h2>
                     <div class="form-group">
                         <label for="register-name">姓名</label>
-                        <input type="text" id="register-name" placeholder="請輸入姓名">
+                        <input type="text" id="register-name" placeholder="請輸入姓名" required>
+                        <div id="register-name-error" class="error-message">請填寫姓名</div>
                     </div>
                     <div class="form-group">
                         <label for="register-phone">手機號碼</label>
-                        <input type="text" id="register-phone" placeholder="請輸入手機號碼">
+                        <input type="text" id="register-phone" placeholder="請輸入手機號碼" required>
+                        <div id="register-phone-error" class="error-message">請輸入有效的手機號碼，最多10碼</div>
                     </div>
                     <div class="form-group">
                         <label for="register-birthday">生日</label>
-                        <input type="date" id="register-birthday">
+                        <input type="date" id="register-birthday" required>
+                        <div id="register-birthday-error" class="error-message">請填寫生日</div>
                     </div>
                     <div class="form-group">
                         <label for="register-email">電子郵件</label>
-                        <input type="email" id="register-email" placeholder="請輸入電子郵件">
+                        <input type="email" id="register-email" placeholder="請輸入電子郵件" required>
+                        <div id="register-email-error" class="error-message">請輸入有效的電子郵件地址</div>
                     </div>
                     <div class="form-group">
                         <label for="register-password">密碼</label>
-                        <input type="password" id="register-password" placeholder="請輸入密碼">
+                        <input type="password" id="register-password" placeholder="請輸入密碼" required>
+                        <div id="register-password-error" class="error-message">密碼至少需要6個字元</div>
                     </div>
                     <div class="form-group">
                         <label for="register-confirm-password">確認密碼</label>
-                        <input type="password" id="register-confirm-password" placeholder="請再次輸入密碼">
+                        <input type="password" id="register-confirm-password" placeholder="請再次輸入密碼" required>
+                        <div id="register-confirm-password-error" class="error-message">密碼與確認密碼不一致</div>
                     </div>
                     <button type="submit" class="submit-button">註冊</button>
                 </form>
-            
-
-                <!-- 社交登入 -->
-                <!-- <div class="social-login">
-                    <button class="social-button google-button">
-                        <i class="fab fa-google"></i> Google 登入
-                    </button>
-                    <button class="social-button fb-button">
-                        <i class="fab fa-facebook-f"></i> Facebook 登入
-                    </button>
-                </div> -->
             </div>
         </main>
     </div>
 
     <script>
-        // 切換登入與註冊表單
-        document.getElementById('login-tab').addEventListener('click', function () {
+        // 表單切換
+        document.getElementById('login-tab').addEventListener('click', function (event) {
+            event.preventDefault();
             document.getElementById('login-tab').classList.add('active');
             document.getElementById('register-tab').classList.remove('active');
             document.getElementById('login-form').classList.add('active');
             document.getElementById('register-form').classList.remove('active');
         });
 
-        document.getElementById('register-tab').addEventListener('click', function () {
+        document.getElementById('register-tab').addEventListener('click', function (event) {
+            event.preventDefault();
             document.getElementById('register-tab').classList.add('active');
             document.getElementById('login-tab').classList.remove('active');
             document.getElementById('register-form').classList.add('active');
             document.getElementById('login-form').classList.remove('active');
+        });
+
+        // 登入表單驗證
+        document.getElementById('login-form').addEventListener('submit', function (event) {
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            const emailError = document.getElementById('login-email-error');
+            const passwordError = document.getElementById('login-password-error');
+
+            let isValid = true;
+
+            if (!email) {
+                emailError.style.display = 'block';
+                isValid = false;
+            } else {
+                emailError.style.display = 'none';
+            }
+
+            if (!password) {
+                passwordError.style.display = 'block';
+                isValid = false;
+            } else {
+                passwordError.style.display = 'none';
+            }
+
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+
+        // 註冊表單驗證
+        document.getElementById('register-form').addEventListener('submit', function (event) {
+            const name = document.getElementById('register-name').value;
+            const phone = document.getElementById('register-phone').value;
+            const birthday = document.getElementById('register-birthday').value;
+            const email = document.getElementById('register-email').value;
+            const password = document.getElementById('register-password').value;
+            const confirmPassword = document.getElementById('register-confirm-password').value;
+
+            const nameError = document.getElementById('register-name-error');
+            const phoneError = document.getElementById('register-phone-error');
+            const birthdayError = document.getElementById('register-birthday-error');
+            const emailError = document.getElementById('register-email-error');
+            const passwordError = document.getElementById('register-password-error');
+            const confirmPasswordError = document.getElementById('register-confirm-password-error');
+
+            let isValid = true;
+
+            if (!name) {
+                nameError.style.display = 'block';
+                isValid = false;
+            } else {
+                nameError.style.display = 'none';
+            }
+
+            if (!/^09\d{8}$/.test(phone)) {
+                phoneError.style.display = 'block';
+                phoneError.textContent = '請輸入有效的手機號碼，必須以09開頭，且後續為8位數字';
+                isValid = false;
+            } else {
+                phoneError.style.display = 'none';
+            }
+
+            if (!birthday) {
+                birthdayError.style.display = 'block';
+                isValid = false;
+            } else {
+                birthdayError.style.display = 'none';
+            }
+
+            if (!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email)) {
+                emailError.style.display = 'block';
+                isValid = false;
+            } else {
+                emailError.style.display = 'none';
+            }
+
+            if (password.length < 6) {
+                passwordError.style.display = 'block';
+                isValid = false;
+            } else {
+                passwordError.style.display = 'none';
+            }
+
+            if (password !== confirmPassword) {
+                confirmPasswordError.style.display = 'block';
+                isValid = false;
+            } else {
+                confirmPasswordError.style.display = 'none';
+            }
+
+            if (!isValid) {
+                event.preventDefault();
+            }
         });
     </script>
 </body>
